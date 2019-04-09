@@ -11,9 +11,7 @@ icon.addEventListener('click', function(e) {
         icon.classList.add('open'); 
         menu.classList.add('open'); 
     }
-    //icon.classList.toggle('open'); 
 });
-
 
 // Custom select box
 var x, i, j, selElmnt, a, b, c;
@@ -146,3 +144,18 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+// Popup onhover
+var modal = document.getElementById('myModal');
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onmouseover = function() {
+    modal.style.display = "block";
+}
+span.onclick = function() {
+    modal.style.display = "none";
+}
+document.onmouseover = function(event) {
+    if ( event.target == modal ) {
+      modal.style.display = "none";
+    }
+}

@@ -38,6 +38,11 @@ module.exports = {
             template: './src/view/plp.html',
             inject: true
         }),
+        new HtmlWebpackPlugin({
+            filename: 'cart.html',
+            template: './src/view/cart.html',
+            inject: true
+        }),
         new ExtractTextPlugin(cssOutput)
     ],
     module: {
@@ -49,20 +54,41 @@ module.exports = {
                     loader: 'babel-loader'
                 }
             },
+            // {
+            //     test: /\.css$/,
+            //     use: ExtractTextPlugin.extract({
+            //         use: ['css-loader'],
+            //         fallback: 'style-loader'
+            //     })
+            // },
+            // {
+            //     test: /\.scss$/,
+            //     use: ExtractTextPlugin.extract({
+            //         use: ['css-loader', 'sass-loader' ],
+            //         fallback: 'style-loader'
+            //     })
+            // },
+
             {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    use: ['css-loader'],
-                    fallback: 'style-loader'
-                })
-            },
-            {
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    use: ['css-loader', 'sass-loader' ],
-                    fallback: 'style-loader'
-                })
-            }
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                    ExtractTextPlugin.loader,
+                  { loader: "css-loader", options: {} },
+                  {
+                    loader: "postcss-loader",
+                    options: {
+                      ident: 'postcss',
+                      plugins: [
+                        require('autoprefixer')({
+                          'browsers': ['> 1%', 'last 2 versions']
+                        }),
+                      ]
+                    }
+                  },
+                  { loader: "sass-loader", options: {} }
+                ]
+              }
+
         ]
     }
 };
