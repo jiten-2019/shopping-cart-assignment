@@ -1,0 +1,148 @@
+
+    
+    {{!-- <section class="main-slider">
+        <div class="wrapper">
+            <div id="slider" class="crousel-container box slide-container">
+                    {{#each banners}}
+                        <img class="mySlides" src="{{this.bannerImageUrl}}" alt="{{this.bannerImageAlt}}">
+                    {{/each}}
+                    
+                    <div class="slide-btn" style="width:100%">
+                        <div class="left-btn" onclick="plusDivs(-1)">PREV</div>
+                        <div class="right-btn" onclick="plusDivs(1)">NEXT</div>
+                        
+                    </div>
+                    <div class="slide-dots">
+                        {{#each banners}}
+                            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv({{math @index "+" 1}})"></span>
+                        {{/each}}
+                            
+                    </div>
+                
+            </div>
+        </div>
+    </section> --}}
+
+     <section class="home-section mt-25 mb-20">
+            <div class="container " >
+                <div class="flex flex-center box-shadow p-0">
+                    <div class="home-slider">
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                              {{!-- <img src="assets/images/offers/offer1.jpg" style="width:100%"> --}}
+                               {{#each banners}}
+                                <img src="{{this.bannerImageUrl}}" alt="{{this.bannerImageAlt}}" style="width:100%">
+                                {{/each}}
+                            </div>
+                           
+                            <a class="prev" id="prev_slide" >PREV</a>
+                            <a class="next" id="next_slide" >NEXT</a>
+                            </div>
+                            <br>
+                            <div style="text-align:center">
+                                {{#each banners}}
+                                     <span class="dot"></span> 
+                                {{/each}}
+                            </div>
+                    </div>
+
+                </div>
+
+
+             {{#each categories}}
+                <div class="flex flex-center box-shadow mt-15">
+                    <div class="category fruits">
+                        <img src="{{this.imageUrl}}" alt="{{this.name}}">
+                    </div>
+                    <div>
+                        <div>
+                            <h2>{{this.name}}</h2>
+                            <p>{{this.description}}</p>
+                            <button>Explore {{this.key}}</button>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+
+         </div>
+     </section>
+{{!-- 
+
+
+    {{#each categories}}
+    <section class="category box">
+        <div class="wrapper">
+            <div class="home-container">
+                <div class="cat_img">
+                    <img width="100%" src="{{this.imageUrl}}" alt="{{this.name}}" />
+                </div>
+                <div class="cat_info">
+                    <h1 class="cat_title">{{this.name}}</h1>
+                    <p class="cat_decs">{{this.description}}</p>
+                    <a href="category/{{this.key}}" class="cat_explore">Explore {{this.key}}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{/each}} --}}
+    
+<script>
+  
+// SLider Home Page
+var prev = document.getElementById("prev_slide");
+var next = document.getElementById("next_slide");
+var slider_dot = document.getElementsByClassName("dot");
+var slider_dot = Array.prototype.slice.call( slider_dot )
+var slideIndex = 1;
+
+if (typeof(slider_dot) != 'undefined' && slider_dot != null)
+{
+  slider_dot.forEach(function(elem, index) {
+    elem.addEventListener("click", function() {
+      currentSlide(index+1);
+    });
+  });
+  
+}
+
+if (typeof(prev) != 'undefined' && prev != null)
+{
+  showSlides(slideIndex);
+
+  prev.addEventListener("click", function(){
+    slideIndex--;
+    showSlides(slideIndex);
+  });
+  next.addEventListener("click", function(){
+    slideIndex++
+    showSlides(slideIndex);
+  });
+}
+
+function plusSlides(n) {
+  console.log("n=",n);
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
+    
