@@ -42,10 +42,10 @@ header{
 				color: $color-hover;
 			}
 		}
-
+	
 		.cart{
 			background: $color-gray;
-			padding: 12px;
+			padding: 6px;
 			text-align: center;
 			position: relative;
 			.item-in-cart{
@@ -291,7 +291,22 @@ button {
 		.category img{
 			max-width: 400px;
 		}
-		
+		a.home-anchor{
+			position: relative;
+			width: 100%;
+			font-size: 100%;
+			line-height: 1.5;
+			margin-top: 20px;
+			padding: 6px 10px;
+			color: #fff;
+			border: none;
+			background: #d00255;
+			background-size: 200% 100%;
+			background-position: 100% 0;
+			transition: all 0.6s ease;
+			cursor: pointer;
+			text-decoration: none;
+		}
 	}
 	.flex-center{
 		align-self: center;
@@ -312,6 +327,7 @@ button {
 	}
 	p{
 		font-size: 85%;
+		margin-bottom: 20px;
 	}
 
 	.box-shadow {
@@ -319,6 +335,9 @@ button {
 		min-height: 250px;
 		position: relative;
 		padding: 5px 0;
+		&:nth-child(odd){
+			flex-direction: row-reverse;
+		}
 	}
 	
 	.box-shadow:after {
@@ -428,8 +447,25 @@ button {
 			transition: all 0.3s ease;
 			a{
 				cursor: pointer;
+				text-decoration: none;
+   		 color: inherit;
+			}
+			&:active{
+				@include bg-color(#d00256);
+				a{
+					color: $color-white;
+					font-weight: 700;
+				}
+			}
+			&.active{
+				@include bg-color(#d00256);
+				a{
+					color: $color-white;
+					font-weight: 700;
+				}
 			}
 		}
+		
 		li:hover{
 			@include bg-color(#d00256);
 			a{
@@ -439,6 +475,7 @@ button {
 		}
 	}
 }
+
 .product-list{
 	@include flex-wrap(flex,wrap);
 	position: relative;
@@ -450,9 +487,31 @@ button {
 	}
 }
 
+.plp-section{
+	.wrapper{
+		.flex-grid{
+			p{
+				min-height: 120px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width:767px){
+	.plp-section{
+		.wrapper{
+			.flex-grid{
+				p{
+					min-height: auto;
+				}
+			}
+		}
+	}
+}
+
 .wrapper {
-	display: flex;
-	min-height: 100%;
+		display: flex;
+		min-height: 100%;
   }
   
   .flex-grid {
@@ -468,6 +527,7 @@ button {
 			font-size: 85%;
 			background: #f5f4f4;
 			padding: 7px 6px;
+		
 		}
 		button{
 			width: auto;
@@ -663,7 +723,7 @@ button {
 				}
 			} 
 			.category.fruits{
-				flex-basis: 35%;
+				flex-basis: 60%;
 			} 
 		}
 		.box-shadow {
@@ -673,6 +733,7 @@ button {
 			padding: 15px 0;
 		}	
 	}
+
   .container {
     width: var(--container-md, 61rem);
 	}

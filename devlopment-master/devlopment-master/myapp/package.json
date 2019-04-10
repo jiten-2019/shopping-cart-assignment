@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "compile:sass-dev": "node-sass -rw public/style/style.scss -o public/css/style.css",
-    "start": "node ./bin/www"
+    "compile:sass": "node-sass public/style -o public/css/",
+    "compile:sass-dev": "node-sass  -rw public/style -o public/css/ -w",
+    "start": "node  ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
