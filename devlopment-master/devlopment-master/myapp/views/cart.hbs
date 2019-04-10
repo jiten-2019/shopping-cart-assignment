@@ -1,33 +1,26 @@
 <section class="cart-section " >
         <div class="container " >
-
             <div class="item-in-cart">
-
-                {{!-- {{#each cart}} --}}
-
                 <div class="my-cart">
                     <h4>My cart <span class="nav__end-cart--count"> {{cart.count}} items</span> </h4>
                 </div>
 
-                {{ #each items }}
-                <div class="my-cart items-details" data-id="">
-                    <img src="assets/images/products/fruit-n-veg/apple.jpg" alt="" width="80px">
-                    <div class="details">
-                        <h3>Apple - Washington, Regular, 4pcs</h3>
-                        <div>
-                        <a href="" class="add">&#45;</a>
-                        <span class="quantity">2</span>
-                        <a href="" class="add">+</a> * <span class="total-rs">Rs. 87</span>
+                {{#each cart.items}}
+                    <div class="my-cart items-details" data-id="">
+                        <img src="{{product.imageURL}}" alt="{{product.name}}" width="80px">
+                        <div class="details">
+                            <h3>{{product.name}}</h3>
+                            <div>
+                            <a href="" class="add">&#45;</a>
+                            <span class="quantity">{{count}}</span>
+                            <a href="" class="add">+</a> * <span class="total-rs">Rs. {{product.price}}</span>
+                            </div>
                         </div>
+                        <span class="tot-rupee">Rs. {{multiply product.price count}} </span>
                     </div>
-                    <span class="tot-rupee">Rs. 115</span>
-                </div>
+                {{/each}}
 
-                {{ /each }}
-
-                {{!-- {{ /each }} --}}
-
-                <div class="my-cart items">
+               <div class="my-cart items">
                     <img src="assets/images/lowest-price.png" alt="">
                     <span > You won't fint it cheeper anywahere</span> 
                 </div>
