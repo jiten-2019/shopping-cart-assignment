@@ -13,6 +13,7 @@
           .then(res => res.json())
           .then(function(cart) {
             cartCountElem.innerHTML = cart.count + ' items';
+            document.getElementById('js-mobile-count').innerHTML = cart.count;
           });
       });
     });
