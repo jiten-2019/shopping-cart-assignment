@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var banners = require('../public/data/banners/index.get.json');
 var prodCategories = require('../public/data/categories/index.get.json');
-
 var prodHbs = require('../public/data/products/index.get.json');
 
 const cart={
@@ -30,11 +29,11 @@ router.get('/product/:id', function(req, res, next) {
    res.render('product', {prodHbs:prodHbs1, categories:ActiveCategories,cart});
 });
 
-router.get('/index', function(req, res, next) {
-  ActiveBanners = banners.filter(banner => banner.isActive);
-  ActiveCategories = prodCategories.filter(category => category.enabled);
-  res.render('home', {banners:ActiveBanners,categories:ActiveCategories,cart});
-});
+// router.get('/index', function(req, res, next) {
+//   ActiveBanners = banners.filter(banner => banner.isActive);
+//   ActiveCategories = prodCategories.filter(category => category.enabled);
+//   res.render('home', {banners:ActiveBanners,categories:ActiveCategories,cart});
+// });
 
 router.get('/signin', function(req, res, next) {
   res.render('signin.hbs', { cart });

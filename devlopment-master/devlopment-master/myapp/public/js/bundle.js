@@ -30,7 +30,6 @@ icon.addEventListener('click', function(e) {
 });
 
 
- 
 // SLider Home Page
 var prev = document.getElementById("prev_slide");
 var next = document.getElementById("next_slide");
