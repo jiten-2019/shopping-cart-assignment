@@ -403,12 +403,19 @@ header {
       bottom: 19px;
       right: 0;
       left: 0;
-      margin: 0 auto; }
+      margin: 0 auto;
+      padding: 6px 0;
+      text-align: center; }
       .modal .modal-content .modal-footer > button {
         color: #fff;
         text-align: center;
         margin-top: 0;
-        font-size: 115%; }
+        font-size: 100%;
+        line-height: inherit;
+        margin-top: 0px;
+        padding: inherit; }
+      .modal .modal-content .modal-footer a {
+        text-decoration: none; }
 
 .cart-section {
   background: #eee;
@@ -418,7 +425,7 @@ header {
   .cart-section .items-details {
     background: #fff;
     padding: 12px;
-    margin: 20px 0 0 0;
+    margin: 20px 0 20px 0;
     width: 100%; }
     .cart-section .items-details span {
       font-weight: 700;
@@ -581,6 +588,30 @@ button {
   cursor: pointer; }
   button:active, button:focus, button:hover {
     outline: none; }
+
+.button {
+  position: relative;
+  width: 100%;
+  font-size: 100%;
+  margin-top: 20px;
+  color: #fff;
+  border: none;
+  background: #d00255;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: all 0.6s ease;
+  cursor: pointer; }
+
+.mobile-menu {
+  background: #d00255;
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  outline: none; }
+
+select option:checked, select option:hover, select option:focus,
+select option:active {
+  background: #d00255; }
 
 .login-section div:first-child {
   align-self: center; }

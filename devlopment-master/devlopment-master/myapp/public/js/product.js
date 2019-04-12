@@ -1,9 +1,13 @@
  var item = document.getElementsByClassName('js-product__buy--btn');
  var cartCountElem = document.getElementsByClassName('nav__end-cart--count')[0];
 
- for (let i = 0; i < item.length; i++) {
-    item[i].addEventListener("click", addItemToCart);
-  }
+//  for (let i = 0; i < item.length; i++) {
+//     item[i].addEventListener("click", addItemToCart);
+//   }
+
+Array.from(item).forEach(function(element) {
+  element.addEventListener("click", addItemToCart);
+});  
 
 function addItemToCart(){
   //console.log("Target: ",event.target );

@@ -1,14 +1,17 @@
 <section class="plp-section">
             <div class="container " >
                 <div class="wrapper">
-                    <div class="custom-select mt-15 xs-show" >
-                        <select>
+                    {{!-- <div class="custom-select mt-15 xs-show" > --}}
+
+                        <select class="mobile-menu xs-show mt-20">
+                            <option >Select value</option>
                             {{#each categories}}
-                            <option value="0">{{ this.name }}</option>
+                            <option value="/product/{{ this.id }}"  data="{{ this.id }}">{{ this.name }}</option>
                             {{/each}}  
                         </select>
-                    </div>
-                    <nav class="plp-nav">
+
+                    {{!-- </div> --}}
+                    <nav class="plp-nav xs-hide">
                         <ul class="">
                             {{#each categories}}
                                 <li><a href="/product/{{ this.id }}" class="js--sidenav" data="{{ this.id }}"> {{ this.name }}</a></li>
