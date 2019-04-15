@@ -920,8 +920,7 @@ select option:active {
   .custom-select .select-hide {
     display: none; }
 
-/*
-  ** Media Queries
+/*** Media Queries
   ***********************************************************/
 @media (max-width: 1000px) {
   .flex-grid > div {
