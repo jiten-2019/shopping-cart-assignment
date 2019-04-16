@@ -63,3 +63,13 @@
     -o-transition: $transition;
     transition: $transition;
 }
+
+// Media query breakpoints
+@mixin media($breakpoint) {
+    @if $breakpoint == phone{
+        @media screen and (max-width:767px){ @content };
+    }
+    @if $breakpoint == tab{
+        @media screen and (max-width:992px){ @content };
+    }
+}

@@ -357,13 +357,21 @@ header{
 
 
 /******* Media queries ***********/
-@media screen and (max-width:992px){
+@include media(phone){
 	.login-section{
-	.sign-up{
-			width:95%;
+		.sign-up{
+				width:95%;
+			}
 		}
-	}
 }
+
+// @media screen and (max-width:992px){
+// 	.login-section{
+// 	.sign-up{
+// 			width:95%;
+// 		}
+// 	}
+// }
 
 @media ( max-width:350px ) {
 	form {
@@ -380,7 +388,7 @@ header{
 .xs-show{
 	display: none;
 }
-@media ( max-width:767px ) {
+@include media(phone){
 	.login-section{
 		.sign-up div:first-child{
 				width:100%;
