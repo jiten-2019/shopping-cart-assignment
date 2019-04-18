@@ -1,26 +1,26 @@
 <section class="cart-section " >
         <div class="container " >
             <div class="item-in-cart">
-                <div class="my-cart items-details">
+                <div class="my-cart item-in-cart__items-details">
                     <h4 class="cart-header__text">My Cart<span class="js-cart--count">({{cart.count}} items)</span> </h4>
                 </div>
 
                 {{#each cart.items}}
-                    <div class="items-details" data-id="{{product.id}}">
+                    <div class="item-in-cart__items-details" data-id="{{product.id}}">
                         <img src="{{product.imageURL}}" alt="{{product.name}}" width="80px">
-                        <div class="details">
+                        <div class="item-in-cart__items-details__details">
                             <h3>{{product.name}}</h3>
                             <div>
-                            <a href="" class="add js-item--remove" data-id="{{product.id}}">&#45;</a>
-                            <span class="quantity cart-item-detail__info--item-count" data-id="{{product.id}}">{{count}}</span>
-                            <a href="" class="add js-item--add" data-id="{{product.id}}">+</a> * <span class="total-rs">Rs. {{product.price}}</span>
+                            <a href="" class="item-in-cart__items-details__details--add add js-item--remove" data-id="{{product.id}}">&#45;</a>
+                            <span class="item-in-cart__items-details__details--quantity quantity cart-item-detail__info--item-count" data-id="{{product.id}}">{{count}}</span>
+                            <a href="" class="item-in-cart__items-details__details--add add js-item--add" data-id="{{product.id}}">+</a> * <span class="total-rs">Rs. {{product.price}}</span>
                             </div>
                         </div>
                         <span class="cart-item-detail__info--total" data-id="{{product.id}}">Rs. {{multiply product.price count}} </span>
                     </div>
                 {{/each}}
 
-               <div class="my-cart items items-details mb-20">
+               <div class="my-cart item-in-cart__items item-in-cart__items-details mb-20">
                     <img src="/static/images/lowest-price.png" alt="">
                     <span > You won't fint it cheeper anywahere</span> 
                 </div>

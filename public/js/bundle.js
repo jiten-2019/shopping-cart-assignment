@@ -159,7 +159,7 @@ const cartController = (function() {
            'span[class="cart-item-detail__info--total"][data-id="' + itemId + '"]'
          )[0].innerHTML = 'Rs.' + price * count;
        } else {
-         let elem = document.querySelectorAll('div[class="items-details"][data-id="' + itemId + '"]')[0];
+         let elem = document.querySelectorAll('div[class="item-in-cart__items-details"][data-id="' + itemId + '"]')[0];
          elem.parentNode.removeChild(elem);
        }
        document.getElementsByClassName('cart-header__text')[0].innerHTML = 'My Cart (' + totalCount + ' items)';
