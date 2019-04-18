@@ -1,35 +1,35 @@
  <section class="home-section mt-25 mb-20">
         <div class="container " >
             <div class="flex flex-center box-shadow p-0" tabindex="0">
-                <div class="home-slider">
-                    <div class="slideshow-container">
+                <div class="home-section__slider">
+                    <div class="home-section__slideshow-container">
                         {{#each banners}}
-                            <div class="mySlides fade">
+                            <div class="home-section__slideshow-container__mySlides mySlides fade">
                                 <img src="{{this.bannerImageUrl}}" alt="{{this.bannerImageAlt}}" style="width:100%">
                             </div>
                         {{/each}}
                         
-                        <a class="prev" id="prev_slide" role="button" tabindex="0">PREV</a>
-                        <a class="next" id="next_slide" role="button" tabindex="0">NEXT</a>
+                        <a class="home-section__slideshow-container__btn--prev prev" id="prev_slide" role="button" tabindex="0">PREV</a>
+                        <a class="home-section__slideshow-container__btn--next next" id="next_slide" role="button" tabindex="0">NEXT</a>
                         </div>
                         <br>
                         <div >
                             {{#each banners}}
-                                    <span class="dot" tabindex="0"></span> 
+                                    <span class="home-section__dot dot" tabindex="0"></span> 
                             {{/each}}
                         </div>
                 </div>
             </div>
             {{#each categories}}
                 <div class="flex flex-center box-shadow mt-15">
-                    <div class="category fruits">
+                    <div class="home-section__category fruits">
                         <img src="{{this.imageUrl}}" alt="{{this.name}}" tabindex="0">
                     </div>
                     <div>
                         <div>
                             <h2 tabindex="0">{{this.name}}</h2>
                             <p tabindex="0">{{this.description}}</p>
-                            <a href="/product/{{this.id}}" class="home-anchor" role="button">Explore {{this.key}}</a>
+                            <a href="/product/{{this.id}}" class="home-section__home-anchor" role="button">Explore {{this.key}}</a>
 
                         </div>
                     </div>

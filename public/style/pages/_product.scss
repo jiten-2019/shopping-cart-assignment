@@ -1,4 +1,4 @@
-.plp-nav{
+.wrapper__plp-nav{
 	width: 300px;
 	@include bg-color(#eeeeee);
 		margin-right: 20px;
@@ -29,7 +29,7 @@
 					font-weight: 700;
 				}
 			}
-		}
+		}                                       
 		
 		li:hover{
 			@include bg-color(#d00256);
@@ -54,30 +54,29 @@
 
 .plp-section{
 	.wrapper{
-		.flex-grid{
+		display: flex;
+		min-height: 100%;
 			p{
-				min-height: 120px;
+				 height: 110px;
+				 overflow: auto;
 			}
-		}
 	}
 }
 
 @media screen and (max-width:767px){
 	.plp-section{
 		.wrapper{
-			.flex-grid{
 				p{
-					min-height: auto;
+					height: auto;
 				}
-			}
 		}
 	}
 }
 
-.wrapper {
-		display: flex;
-		min-height: 100%;
-  }
+// .wrapper {
+// 		display: flex;
+// 		min-height: 100%;
+//   }
   
   .flex-grid {
 		@include flex-wrap(flex,wrap);
@@ -99,7 +98,7 @@
 			margin-top: 0;
 			font-size: 90%;
 		}
-		.product-mrp{
+		.plp__list__product__mrp{
 			margin-top: 12px;
 			display: flex;
 			align-items: center;

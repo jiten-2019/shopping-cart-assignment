@@ -1,50 +1,46 @@
 <section class="plp-section">
-            <div class="container " >
-                <div class="wrapper">
-                    {{!-- <div class="custom-select mt-15 xs-show" > --}}
+    <div class="container " >
+        <div class="wrapper">
+            <select class="mobile-menu xs-show mt-20">
+                <option >Select value</option>
+                {{#each categories}}
+                <option value="/product/{{ this.id }}"  data="{{ this.id }}">{{ this.name }}</option>
+                {{/each}}  
+            </select>
 
-                        <select class="mobile-menu xs-show mt-20">
-                            <option >Select value</option>
-                            {{#each categories}}
-                            <option value="/product/{{ this.id }}"  data="{{ this.id }}">{{ this.name }}</option>
-                            {{/each}}  
-                        </select>
+            <nav class="wrapper__plp-nav xs-hide">
+                <ul class="">
+                    {{#each categories}}
+                        <li><a href="/product/{{ this.id }}" class="js--sidenav" data="{{ this.id }}"> {{ this.name }}</a></li>
+                    {{/each}}  
+                </ul>
+            </nav>
+            <main class="mt-20 mb-20">
+                <div class="flex-grid">
 
-                    {{!-- </div> --}}
-                    <nav class="plp-nav xs-hide">
-                        <ul class="">
-                            {{#each categories}}
-                                <li><a href="/product/{{ this.id }}" class="js--sidenav" data="{{ this.id }}"> {{ this.name }}</a></li>
-                            {{/each}}  
-                        </ul>
-                    </nav>
-                      <main class="mt-20 mb-20">
-                        <div class="flex-grid">
+                    {{#each prodHbs}}
 
-     
-                            {{#each prodHbs}}
+                        <div class="plp">
+                            <h2>{{ this.name }}</h2>
+                            <div class="plp__list">
+                                <img src="{{this.imageURL}}" alt="{{this.description}}" >
+                                <div class="plp__list__prodct">
+                                    <p>{{this.description}}</p>
+                                    <div class="plp__list__product__mrp">
+                                        <span class="xs-hide sm-hide">MRP Rs. {{this.price}}</span>
+                                        <button class="js-product__buy--btn" id="{{this.id}}">Buy Now<span class="xs-show sm-show" > @ MRP Rs. {{this.price}}</span></button>
+                                    </div> 
 
-                                <div class="plp-list">
-                                <h2>{{ this.name }}</h2>
-                                <div class="product">
-                                    <img src="{{this.imageURL}}" alt="{{this.description}}" >
-                                    <div class="prodct-info">
-                                        <p>{{this.description}}</p>
-                                        <div class="product-mrp ">
-                                            <span class="xs-hide sm-hide">MRP Rs. {{this.price}}</span>
-                                            <button class="js-product__buy--btn" id="{{this.id}}">Buy Now<span class="xs-show sm-show" > @ MRP Rs. {{this.price}}</span></button>
-                                        </div> 
-
-                                    </div>    
-                                </div>
-                                </div>
-
-                            {{/each}}
-
+                                </div>    
+                            </div>
                         </div>
-                    </main>
-                </div>
-            </div>
-        </section>
 
-        <script type="text/javascript" src="/js/product.js"></script>
+                    {{/each}}
+
+                </div>
+            </main>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript" src="/js/product.js"></script>
