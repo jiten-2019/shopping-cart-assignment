@@ -3,6 +3,7 @@
     flex-flow: row;
     &__category img{
         max-width: 400px;
+        outline: none;
     }
     &__home-anchor{
         position: relative;
@@ -43,6 +44,7 @@ p{
 }
 
 .box-shadow {
+    outline: none;
     @include bg-color();
     min-height: 250px;
     position: relative;
@@ -74,7 +76,7 @@ height: 91%;
         position: relative;
         margin: auto;
         &__mySlides {display: none}
-        img {vertical-align: middle;}
+        img {vertical-align: middle; outline: none;}
         
         &__btn--prev, &__btn--next {
             cursor: pointer;

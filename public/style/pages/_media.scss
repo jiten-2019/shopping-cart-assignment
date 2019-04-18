@@ -202,10 +202,16 @@ form {
 	 .box-shadow:after {
 				 height: 87%;
 		}
+		
 	}
 }
 
 @media screen and (min-width:768px) and (max-width:992px){
+	.home-section{
+		.box-shadow{
+			flex-flow: nowrap;
+		}
+	}
 	.container {
     padding: 0;
 	}
