@@ -27,9 +27,9 @@ form {
 @include media(phone){
 	.login-section{
 		.sign-up div:first-child{
-				width:100%;
-			}
+			width:100%;
 		}
+	}
 	.xs-show{
 		display: inline-block;
 	}
@@ -39,29 +39,29 @@ form {
 	h2 {
     font-size: 105%;
 	}
-		header nav {
-			flex-grow: 0;
-			flex: 0;
+	header nav {
+		flex-grow: 0;
+		flex: 0;
+	}
+	header nav .row {
+		display: inline-block;
+		padding: 6px 0 5px 0;
+		img{
+			max-width: 115px;
 		}
-		header nav .row {
-			display: inline-block;
-			padding: 6px 0 5px 0;
-			img{
-				max-width: 115px;
-			}
-			ul.main-nav{
-				display: none;
-			}
-		}
-		.xs-hide{
+		ul.main-nav{
 			display: none;
 		}
+	}
+	.xs-hide{
+		display: none;
+	}
 
-		header .header-right {
-			flex-basis: 34%;
+	header .header-right {
+		flex-basis: 34%;
 		.cart {
 			display: flex;
-    	justify-content: center;
+		justify-content: center;
 				align-items: center;
 				height: 65px;
 		}
@@ -71,15 +71,15 @@ form {
 	}
 
 	.home-section {
-			&__category{
-				flex-basis: 80%;
-				img{
-					max-width: 100%;
-				}
-			} 
-			&__category.fruits{
-				flex-basis: 60%;
-			} 
+		&__category{
+			flex-basis: 80%;
+			img{
+				max-width: 100%;
+			}
+		} 
+		&__category.fruits{
+			flex-basis: 60%;
+		} 
 		.box-shadow {
 			background-color: #fff;
 			min-height: 165px;
@@ -96,8 +96,6 @@ form {
     width: var(--container-md, 61rem);
 	}
 	.login-section {
-	
-		// justify-content: center;
 		div:first-child{
 			align-self: center;
 			flex-basis: auto;
@@ -105,16 +103,14 @@ form {
 		
 	}
 	.sign-up {
-    width: auto;
+   		 width: auto;
 	}
 
 	// Mobile menu
 	header{
 		.header-right{
-			.cart{
-				#hamburger-icon{
-					display: inline-block;
-				}
+			#hamburger-icon{
+				display: inline-block;
 			}
 		}
 	}
@@ -126,15 +122,15 @@ form {
 	}
 	.js--main-nav{
 		list-style: none;
-    position: absolute;
-    top: 68px;
-    z-index: 999;
-    background: #eeeeee;
-    width: 100%;
-    right: 0;
-    text-align: center;
-    font-size: 140%;
-    line-height: 139%;
+		position: absolute;
+		top: 68px;
+		z-index: 999;
+		background: #eeeeee;
+		width: 100%;
+		right: 0;
+		text-align: center;
+		font-size: 140%;
+		line-height: 139%;
 		padding: 12px;
 	
 			li{
@@ -158,8 +154,7 @@ form {
 		
 	}
 
-	.plp-section{
-		.wrapper {
+	.plp-section .wrapper {
 			flex-direction: column;
 			.plp-nav {
 				width: 100%;
@@ -181,7 +176,6 @@ form {
 					}
 				}
 			}
-		}
 	}
 	.modal {
 		.modal-content {

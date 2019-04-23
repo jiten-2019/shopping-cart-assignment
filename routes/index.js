@@ -29,12 +29,6 @@ router.get('/product/:id', function(req, res, next) {
    res.render('product', {prodHbs:prodHbs1, categories:ActiveCategories,cart});
 });
 
-// router.get('/index', function(req, res, next) {
-//   ActiveBanners = banners.filter(banner => banner.isActive);
-//   ActiveCategories = prodCategories.filter(category => category.enabled);
-//   res.render('home', {banners:ActiveBanners,categories:ActiveCategories,cart});
-// });
-
 router.get('/signin', function(req, res, next) {
   res.render('signin.hbs', { cart });
 });
@@ -81,8 +75,7 @@ router.post('/cart/:operation', function(req, res) {
       cart.items.push({
           product,
           count,
-          totalPrice: product.price * count,
-          totalPrice: itemPrice
+         totalPrice: itemPrice
       });
       cart.count += count;
       cart.totalPrice += itemPrice;

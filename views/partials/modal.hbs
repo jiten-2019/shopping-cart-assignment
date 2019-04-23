@@ -8,7 +8,7 @@
         {{#if cart.items}}
             <section class="cart-section " >
                 <div class="container " >
-                    <div class="item-in-cart">
+                    <div class="item-in-cart mini-cart">
 
                         {{#each cart.items}}
                             <div class="item-in-cart__items-details" data-id="{{product.id}}">
@@ -21,15 +21,10 @@
                                     <a href="" class="item-in-cart__items-details__details--add add js-item--add" data-id="{{product.id}}">+</a> * <span class="total-rs">Rs. {{product.price}}</span>
                                     </div>
                                 </div>
-                                <span class="cart-item-detail__info--total" data-id="{{product.id}}">Rs. {{multiply product.price count}} </span>
+                                <span class="cart-item-detail__info--total" data-id="{{product.id}}">Rs. {{math product.price "*" count}} </span>
                             </div>
                         {{/each}}
-    {{!-- 
-                    <div class="my-cart items items-details mb-20">
-                            <img src="/static/images/lowest-price.png" alt="">
-                            <span > You won't fint it cheeper anywahere</span> 
-                        </div>
-                    </div> --}}
+  
                 </div>
             </section>                                      
         {{else}}

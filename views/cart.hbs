@@ -16,7 +16,7 @@
                             <a href="" class="item-in-cart__items-details__details--add add js-item--add" data-id="{{product.id}}">+</a> * <span class="total-rs">Rs. {{product.price}}</span>
                             </div>
                         </div>
-                        <span class="cart-item-detail__info--total" data-id="{{product.id}}">Rs. {{multiply product.price count}} </span>
+                        <span class="cart-item-detail__info--total" data-id="{{product.id}}">Rs. {{math product.price "*" count}} </span>
                     </div>
                 {{/each}}
 
@@ -30,12 +30,9 @@
 
     <section class="promo-code" >
         <div class="container " >
-            <p class="text-center">Promo code can be applied on payment page.</p>
+            <p class="promo-code__text-center">Promo code can be applied on payment page.</p>
             {{#if cart.totalPrice}}
-            <button>Checkout to proceed <span class="button-price">Rs. {{cart.totalPrice}} ></span></button>   
+            <button class="promo-code--button">Checkout to proceed <span class="button-price">Rs. {{cart.totalPrice}} ></span></button>   
             {{/if}}
         </div>
     </section>
-
-
-     <script src="/js/cart.js" type="text/javascript"></script>

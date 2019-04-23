@@ -60,9 +60,9 @@ p{
     position: absolute;
     left: 50%;
     top: 21px;
-transform: translateX(-50%);
-width: 90%;
-height: 91%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 91%;
     border-radius: 30%;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.4);
 }
@@ -76,7 +76,7 @@ height: 91%;
         position: relative;
         margin: auto;
         &__mySlides {display: none}
-        img {vertical-align: middle; outline: none;}
+        img {vertical-align: middle; outline: none;width: 100%;}
         
         &__btn--prev, &__btn--next {
             cursor: pointer;

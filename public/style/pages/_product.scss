@@ -73,11 +73,6 @@
 	}
 }
 
-// .wrapper {
-// 		display: flex;
-// 		min-height: 100%;
-//   }
-  
   .flex-grid {
 		@include flex-wrap(flex,wrap);
 		span{
