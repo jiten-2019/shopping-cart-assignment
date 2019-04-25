@@ -11,13 +11,13 @@
                         
                         <a class="home-section__slideshow-container__btn--prev prev" id="prev_slide" role="button" tabindex="0">PREV</a>
                         <a class="home-section__slideshow-container__btn--next next" id="next_slide" role="button" tabindex="0">NEXT</a>
-                        </div>
-                        <br>
-                        <div >
-                            {{#each banners}}
-                                    <span class="home-section__dot dot" tabindex="0"></span> 
-                            {{/each}}
-                        </div>
+                    </div>
+                    <br>
+                    <div class="home-section__slider__dots">
+                        {{#each banners}}
+                                <span class="home-section__dot dot" tabindex="0"></span> 
+                        {{/each}}
+                    </div>
                 </div>
             </div>
             {{#each categories}}

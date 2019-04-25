@@ -101,10 +101,11 @@
     if (n < 1) {slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
-    }
-    for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
+    // for (i = 0; i < dots.length; i++) {
+    //     dots[i].className = dots[i].className.replace(" active", "");
+    // }
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " active";
   }
@@ -175,7 +176,9 @@ const cartController = (function() {
          let elem = document.querySelectorAll('div[class="item-in-cart__items-details"][data-id="' + itemId + '"]')[0];
          elem.parentNode.removeChild(elem);
        }
-       document.getElementsByClassName('cart-header__text')[0].innerHTML = 'My Cart (' + totalCount + ' items)';
+       const cart_nav = document.getElementsByClassName('cart-header__text')[0];
+       if(cart_nav)
+        cart_nav.innerHTML = 'My Cart (' + totalCount + ' items)';
        document.getElementsByClassName('button-price')[0].innerHTML = 'Rs.' + totalPrice;
        if(totalPrice==0)
            document.getElementsByClassName('button-price')[0].parentElement.style.display = "none";
