@@ -2,38 +2,21 @@
     <div class="container " >
         <div class="sign-up flex">
             <div class="sign-up__page-info mt-20">
-                <h2>Signup</h2>
-                <p>We do not share your personal details with anyone. </p>
+                <h2>{{signUpData.heading}}</h2>
+                <p>{{signUpData.subHeading}} </p>
             </div>
             <div>
                 <form action="#" autocomplete="off">
+                     {{#each signUpData.inputs}}
                     <fieldset>
-                        <input id="first" type="text" name="first" required>
-                        <label for="first">First Name</label>
+                        <input id="{{this.id}}" type="{{this.type}}" name="{{this.id}}" required>
+                        <label for="{{this.id}}">{{this.label}}</label>
                         <div class="after"></div>
                     </fieldset>
+                     {{/each}}
+                   
                     <fieldset>
-                        <input id="last" type="text" name="last" required>
-                        <label for="last">Last Name</label>
-                        <div class="after"></div>
-                    </fieldset>
-                    <fieldset>
-                        <input id="email" type="email" name="email" required>
-                        <label for="email">Email</label>
-                        <div class="after"></div>
-                    </fieldset>
-                    <fieldset>
-                        <input id="password" type="password" name="password" required>
-                        <label for="password">Password</label>
-                        <div class="after"></div>
-                    </fieldset>
-                    <fieldset>
-                        <input id="con-password" type="password" name="con-password" required>
-                        <label for="con-password">Confirm password</label>
-                        <div class="after"></div>
-                    </fieldset>
-                    <fieldset>
-                        <button>Submit</button>
+                        <button>{{signUpData.submitLabel}}</button>
                     </fieldset>
                 </form>
             </div>
