@@ -87,9 +87,12 @@
 				line-height: inherit;
 				margin-top: 0px;
 				padding: inherit;
+				padding: 6px;
 			}
 			a{
 				text-decoration: none;
+				display: block;
+    		padding: 6px;
 			}
 		}
 	}
@@ -112,6 +115,7 @@
 		img{
 			margin-right: 15px;
 			}
+
 		&__details{
 			flex:1;
 			&--add{
@@ -130,6 +134,18 @@
 				margin-top: 20px;
 				display: inline-block;
 				padding-top: 0;
+			}
+			input{
+				width: 30px;
+				text-align: center;
+				font-size: 86%;
+				border: none;
+				outline: unset;
+				&::-webkit-inner-spin-button, 
+				::-webkit-outer-spin-button { 
+					-webkit-appearance: none; 
+					margin: 0; 
+				}
 			}
 		}  
 		span{

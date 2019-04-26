@@ -115,8 +115,10 @@
 (function(){
   var remove_item = document.getElementsByClassName('js-item--remove');
   var add_item = document.getElementsByClassName('js-item--add');
+  var change_item = document.getElementsByClassName('cart-item-detail__info--item-count');
   var remove_item = Array.prototype.slice.call( remove_item );
   var add_item = Array.prototype.slice.call( add_item );
+  var change_item = Array.prototype.slice.call( change_item );
 
   remove_item.forEach(function(elem) {
     elem.addEventListener("click", function(event) {
@@ -132,12 +134,20 @@
     });  
   });  
 
+  change_item.forEach(function(elem) {
+    elem.addEventListener("change", function(event) {
+      event.preventDefault();
+       manageItemToCart("change", event.target.value);
+    });  
+  });  
+
 })();
 
-function manageItemToCart(op_type){
+function manageItemToCart(op_type, change=null){
   var nav_cart = document.getElementsByClassName('nav__end-cart--count')[0];
  let productId = event.target.getAttribute('data-id');
- postCartData(op_type, { productId: productId }).then(function(cart) {
+ console.log("change item", change);
+ postCartData(op_type, { productId: productId, change: change }).then(function(cart) {
    nav_cart.innerHTML = cart.count + ' items';
    document.getElementById('js-mobile-count').innerHTML = cart.count;
    let cartProductDetail = cart.items.find(item => item.product.id === productId);
@@ -169,6 +179,9 @@ const cartController = (function() {
        count = count || 0;
        if (count > 0) {
          document.querySelectorAll('span[data-id="' + itemId + '"]')[0].innerHTML = count;
+
+         document.querySelectorAll('input[data-id="' + itemId + '"]')[0].value = count;
+
          document.querySelectorAll(
            'span[class="cart-item-detail__info--total"][data-id="' + itemId + '"]'
          )[0].innerHTML = 'Rs.' + price * count;

@@ -52,6 +52,9 @@ router.post('/cart/:operation', function(req, res) {
     count = 1;
   } else if (operation === 'remove') {
     count = -1;
+  } else if (operation === 'change') {
+    const changeItem = req.body.change;
+    count = changeItem;
   } else {
     return res.status(404).send('Not Found');
   }
@@ -60,11 +63,19 @@ router.post('/cart/:operation', function(req, res) {
     const oldItem = cart.items.find(item => item.product.id === product.id);
     if (oldItem) {
      
-       oldItem.count += count;
-      cart.totalPrice -= oldItem.totalPrice;
-      oldItem.totalPrice = oldItem.product.price * oldItem.count
-      cart.count += count;
-      cart.totalPrice += oldItem.totalPrice;
+       if (operation === 'change') {
+        cart.count += (count-oldItem.count);
+        oldItem.count = Number(count);
+        cart.totalPrice -= oldItem.totalPrice;
+        oldItem.totalPrice = oldItem.product.price * oldItem.count
+        cart.totalPrice += oldItem.totalPrice;
+      }else{
+        oldItem.count += Number(count);
+        cart.totalPrice -= oldItem.totalPrice;
+        oldItem.totalPrice = oldItem.product.price * oldItem.count
+        cart.count += count;
+        cart.totalPrice += oldItem.totalPrice;
+      }
 
       if (oldItem.count <= 0) {
         cart.items.splice(cart.items.findIndex(item => item.product.id === product.id), 1);
