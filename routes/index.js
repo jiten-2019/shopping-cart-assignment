@@ -13,7 +13,7 @@ const cart={
 }
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.all('/', function(req, res, next) {
   ActiveBanners = banners.filter(banner => banner.isActive);
   ActiveCategories = prodCategories.filter(category => category.enabled);
   res.render('home', {banners:ActiveBanners,categories:ActiveCategories,cart});
@@ -31,7 +31,7 @@ router.get('/product/:id', function(req, res, next) {
    res.render('product', {prodHbs:prodHbs1, categories:ActiveCategories,cart});
 });
 
-router.get('/signin', function(req, res, next) {
+router.all('/signin', function(req, res, next) {
   res.render('signin.hbs', { cart, loginData:loginData });
 });
 

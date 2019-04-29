@@ -16,9 +16,9 @@
 
             <div class="cart">
                 <a href="/cart" id="cartBtn" class="got-to-cart"> <img src="/static/images/cart.svg" alt="cart icon"> </a>
-                <span class="xs-show item-in-cart" id="js-mobile-count" tabindex="0">{{cart.count}}</span>
-                <span class="xs-hide nav__end-cart--count" tabindex="0">{{cart.count}} item</span>
-                <div id="hamburger-icon" tabindex="0">
+                <span class="xs-show item-in-cart" id="js-mobile-count" aria-label="{{cart.count}} Item in cart" tabindex="0">{{cart.count}}</span>
+                <span class="xs-hide nav__end-cart--count" tabindex="0" aria-label="{{cart.count}} Item in cart">{{cart.count}} item</span>
+                <div id="hamburger-icon">
                     <span></span>
                     <span></span>
                     <span></span>

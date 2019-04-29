@@ -6,17 +6,17 @@
                 <p>{{signUpData.subHeading}} </p>
             </div>
             <div>
-                <form action="#" autocomplete="off">
+                <form action="/signup" autocomplete="off" method="post">
                      {{#each signUpData.inputs}}
                     <fieldset>
-                        <input id="{{this.id}}" type="{{this.type}}" name="{{this.id}}" required>
+                        <input id="{{this.id}}" type="{{this.type}}" name="{{this.id}}" required aria-required="true">
                         <label for="{{this.id}}">{{this.label}}</label>
                         <div class="after"></div>
                     </fieldset>
                      {{/each}}
                    
                     <fieldset>
-                        <button>{{signUpData.submitLabel}}</button>
+                        <button aria-label="Submit form to complete signup process">{{signUpData.submitLabel}}</button>
                     </fieldset>
                 </form>
             </div>
