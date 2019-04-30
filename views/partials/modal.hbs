@@ -1,46 +1,52 @@
- <div id="cartModal" class="modal tooltip">
+<div id="cartModal" class="modal tooltip">
     <div class="modal-content">
         <div class="modal-header">
             <span class="close">&times;</span>
             <h2>My cart</h2>
         </div>
-       
-        {{#if cart.items}}
-            <section class="cart-section " >
-                <div class="container " >
-                    <div class="item-in-cart mini-cart">
 
-                        {{#each cart.items}}
-                            <div class="item-in-cart__items-details" data-id="{{product.id}}">
-                                <img src="{{product.imageURL}}" alt="{{product.name}}" width="80px">
-                                <div class="item-in-cart__items-details__details">
-                                    <h3>{{product.name}}</h3>
-                                    <div>
-                                    <a href="" class="item-in-cart__items-details__details--add add js-item--remove" data-id="{{product.id}}">&#45;</a>
-                                    <span class="item-in-cart__items-details__details--quantity quantity cart-item-detail__info--item-count" data-id="{{product.id}}">{{count}}</span>
-                                    <a href="" class="item-in-cart__items-details__details--add add js-item--add" data-id="{{product.id}}">+</a> * <span class="total-rs">Rs. {{product.price}}</span>
-                                    </div>
-                                </div>
-                                <span class="cart-item-detail__info--total" data-id="{{product.id}}">Rs. {{math product.price "*" count}} </span>
+        {{#if cart.items}}
+        <section class="cart-section ">
+            <div class="container ">
+                <div class="item-in-cart mini-cart">
+
+                    {{#each cart.items}}
+                    <div class="item-in-cart__items-details" data-id="{{product.id}}">
+                        <img src="{{product.imageURL}}" alt="{{product.name}}" width="80px">
+                        <div class="item-in-cart__items-details__details">
+                            <h3>{{product.name}}</h3>
+                            <div>
+                                <a href="" class="item-in-cart__items-details__details--add add js-item--remove"
+                                    data-id="{{product.id}}">&#45;</a>
+                                <span
+                                    class="item-in-cart__items-details__details--quantity quantity cart-item-detail__info--item-count"
+                                    data-id="{{product.id}}">{{count}}</span>
+                                <a href="" class="item-in-cart__items-details__details--add add js-item--add"
+                                    data-id="{{product.id}}">+</a> * <span class="total-rs">Rs. {{product.price}}</span>
                             </div>
-                        {{/each}}
-  
+                        </div>
+                        <span class="cart-item-detail__info--total" data-id="{{product.id}}">Rs.
+                            {{math product.price "*" count}} </span>
+                    </div>
+                    {{/each}}
+
                 </div>
-            </section>                                      
+        </section>
         {{else}}
-            <div class="modal-body">
-                <h2>No item in your cart</h2>
-                <p>Your favourite items are just a click away</p>
-            </div>    
+        <div class="modal-body">
+            <h2>No item in your cart</h2>
+            <p>Your favourite items are just a click away</p>
+        </div>
         {{/if}}
 
         <div class="modal-footer">
-            
+
             {{#if cart.totalPrice}}
-                <button class="promo-code--button">Checkout to proceed <span class="button-price">Rs. {{cart.totalPrice}} ></span></button>   
+            <button class="promo-code--button">Checkout to proceed <span class="button-price">Rs. {{cart.totalPrice}}
+                    ></span></button>
             {{else}}
-                <a href="/product" class="promo-code--button button" role="button">Start Shopping</a>
-            {{/if}}    
+            <a href="/product" class="promo-code--button button" role="button">Start Shopping</a>
+            {{/if}}
         </div>
     </div>
-</div>     
+</div>

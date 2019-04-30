@@ -1,41 +1,44 @@
- <section class="home-section mt-25 mb-20">
-        <div class="container " >
-            <div class="flex flex-center box-shadow p-0" tabindex="0">
-                <div class="home-section__slider" id="img_slider_1">
-                    <div class="home-section__slideshow-container">
-                        {{#each banners}}
-                            <div class="home-section__slideshow-container__mySlides mySlides fade">
-                                <img src="{{this.bannerImageUrl}}" alt="{{this.bannerImageAlt}}" tabindex="0">
-                            </div>
-                        {{/each}}
-                        
-                        <a class="home-section__slideshow-container__btn--prev prev" id="prev_slide" role="button" tabindex="0">PREV</a>
-                        <a class="home-section__slideshow-container__btn--next next" id="next_slide" role="button" tabindex="0">NEXT</a>
+<section class="home-section mt-25 mb-20">
+    <div class="container ">
+        <div class="flex flex-center box-shadow p-0" tabindex="0">
+            <div class="home-section__slider" id="img_slider_1">
+                <div class="home-section__slideshow-container">
+                    {{#each banners}}
+                    <div class="home-section__slideshow-container__mySlides mySlides fade">
+                        <img src="{{this.bannerImageUrl}}" alt="{{this.bannerImageAlt}}" tabindex="0">
                     </div>
-                    <br>
-                    <div class="home-section__slider__dots">
-                        {{#each banners}}
-                                <span class="home-section__dot dot" tabindex="0"></span> 
-                        {{/each}}
-                    </div>
-                </div>
-           </div>
-            {{#each categories}}
-                <div class="flex flex-center box-shadow mt-15">
-                    <div class="home-section__category fruits">
-                        <img src="{{this.imageUrl}}" alt="{{this.name}} - {{this.description}}" tabindex="0">
-                    </div>
-                    <div>
-                        <div>
-                            <h2 >{{this.name}}</h2>
-                            <p >{{this.description}}</p>
-                            <a href="/product/{{this.id}}" class="home-section__home-anchor" role="button">Explore {{this.key}}</a>
+                    {{/each}}
 
-                        </div>
-                    </div>
+                    <a class="home-section__slideshow-container__btn--prev prev" id="prev_slide" role="button"
+                        tabindex="0">PREV</a>
+                    <a class="home-section__slideshow-container__btn--next next" id="next_slide" role="button"
+                        tabindex="0">NEXT</a>
                 </div>
-            {{/each}}
+                <br>
+                <div class="home-section__slider__dots">
+                    {{#each banners}}
+                    <span class="home-section__dot dot" tabindex="0"></span>
+                    {{/each}}
+                </div>
+            </div>
         </div>
-    </section>
+        {{#each categories}}
+        <div class="flex flex-center box-shadow mt-15">
+            <div class="home-section__category fruits">
+                <img src="{{this.imageUrl}}" alt="{{this.name}} - {{this.description}}" tabindex="0">
+            </div>
+            <div>
+                <div>
+                    <h2>{{this.name}}</h2>
+                    <p>{{this.description}}</p>
+                    <a href="/product/{{this.id}}" class="home-section__home-anchor" role="button">Explore
+                        {{this.key}}</a>
+
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</section>
 
 <script type="text/javascript" src="/js/slider.js"></script>

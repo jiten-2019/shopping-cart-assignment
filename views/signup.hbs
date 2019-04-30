@@ -1,5 +1,5 @@
- <section class="login-section mt-30 mb-15">
-    <div class="container " >
+<section class="login-section mt-30 mb-15">
+    <div class="container ">
         <div class="sign-up flex">
             <div class="sign-up__page-info mt-20">
                 <h2>{{signUpData.heading}}</h2>
@@ -7,14 +7,14 @@
             </div>
             <div>
                 <form action="/signup" autocomplete="off" method="post">
-                     {{#each signUpData.inputs}}
+                    {{#each signUpData.inputs}}
                     <fieldset>
                         <input id="{{this.id}}" type="{{this.type}}" name="{{this.id}}" required aria-required="true">
                         <label for="{{this.id}}">{{this.label}}</label>
                         <div class="after"></div>
                     </fieldset>
-                     {{/each}}
-                   
+                    {{/each}}
+
                     <fieldset>
                         <button aria-label="Submit form to complete signup process">{{signUpData.submitLabel}}</button>
                     </fieldset>
