@@ -1,4 +1,4 @@
-<section class="home-section mt-25 mb-20">
+<section class="home-section">
     <div class="container ">
         <div class="flex flex-center box-shadow p-0" tabindex="0">
             <div class="home-section__slider" id="img_slider_1">
@@ -9,34 +9,32 @@
                     </div>
                     {{/each}}
 
-                    <a class="home-section__slideshow-container__btn--prev prev" id="prev_slide" role="button"
-                        tabindex="0">PREV</a>
-                    <a class="home-section__slideshow-container__btn--next next" id="next_slide" role="button"
-                        tabindex="0">NEXT</a>
+                    <button class="home-section__slideshow-container__btn--prev prev" id="prev_slide">PREV</button>
+                    <buttton class="home-section__slideshow-container__btn--next next" id="next_slide">NEXT</button>
                 </div>
                 <br>
                 <div class="home-section__slider__dots">
                     {{#each banners}}
-                    <span class="home-section__dot dot" tabindex="0"></span>
+                    <span class="home-section__dot dot" ></span>
                     {{/each}}
                 </div>
             </div>
         </div>
         {{#each categories}}
-        <div class="flex flex-center box-shadow mt-15">
-            <div class="home-section__category fruits">
-                <img src="{{this.imageUrl}}" alt="{{this.name}} - {{this.description}}" tabindex="0">
-            </div>
-            <div>
-                <div>
-                    <h2>{{this.name}}</h2>
-                    <p>{{this.description}}</p>
-                    <a href="/product/{{this.id}}" class="home-section__home-anchor" role="button">Explore
-                        {{this.key}}</a>
+            <div class="flex flex-center box-shadow">
+                <div class="home-section__category fruits">
+                    <img src="{{this.imageUrl}}" alt="{{this.name}} - {{this.description}}" tabindex="0">
+                </div>
+                <div class="home-section__prod-desc">
+                    <div>
+                        <h2>{{this.name}}</h2>
+                        <p>{{this.description}}</p>
+                        <a href="/product/{{this.id}}" class="home-section__home-anchor" role="button">Explore
+                            {{this.key}}</a>
 
+                    </div>
                 </div>
             </div>
-        </div>
         {{/each}}
     </div>
 </section>

@@ -1,21 +1,15 @@
 <section class="plp-section">
     <div class="container " >
         <div class="wrapper">
-            <select class="mobile-menu xs-show mt-20" tabindex="-1">
-                <option >Select value</option>
-                {{#each categories}}
-                <option value="/product/{{ this.id }}"  data="{{ this.id }}">{{ this.name }}</option>
-                {{/each}}  
-            </select>
-
-            <aside class="wrapper__plp-nav xs-hide">
+            <button class="wrapper__mobile-menu--btn xs-show" >Select Value ></button>       
+            <aside class="wrapper__plp-nav wrapper__side-menu">
                 <ul class="">
                     {{#each categories}}
                         <li><a href="/product/{{ this.id }}" class="js--sidenav" data="{{ this.id }}"> {{ this.name }}</a></li>
                     {{/each}}  
                 </ul>
             </aside>
-            <main class="mt-20 mb-20">
+            <main class="wrapper__prod-list">
                 <div class="flex-grid">
 
                     {{#each prodHbs}}

@@ -20,6 +20,22 @@
 }
 
 @include media(phone) {
+  .wrapper{
+    &__side-menu{
+      display: none;
+    }
+    &__side-menu.open{
+      display: inline-block;
+    }
+    &__side-menu.close{
+      display: none;
+    }
+    &__plp-nav{
+      width: 100%;
+      flex: 0;
+    }
+  }
+ 
   .login-section {
     .sign-up div:first-child {
       width: 100%;

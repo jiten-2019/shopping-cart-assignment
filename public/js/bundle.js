@@ -18,15 +18,26 @@
   });
 })();
 
-// Mobile select
+
+// mobile icon
 (function() {
-  const selectElement = document.querySelector(".mobile-menu");
-  if (selectElement != undefined || selectElement != null) {
-    selectElement.addEventListener("change", event => {
-      event.preventDefault();
-      var url = selectElement.options[selectElement.selectedIndex].value;
-      document.location = url;
-      console.log(url);
+  const btn = document.getElementsByClassName("wrapper__mobile-menu--btn")[0];
+  
+ 
+  if(btn != undefined && btn != null) {
+    btn.addEventListener("click", function(e) {
+      e.preventDefault();
+      //var menu = this.closest('ul');
+      const menu = document.getElementsByClassName("wrapper__side-menu")[0];
+      console.log("btn-->", btn);
+      console.log("menu-->", menu);
+      if (btn.classList.contains("open")) {
+        btn.classList.remove("open");
+        menu.classList.remove("open");
+      } else {
+        btn.classList.add("open");
+        menu.classList.add("open");
+      }
     });
   }
 })();

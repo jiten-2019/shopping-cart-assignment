@@ -11,14 +11,13 @@
                 <div class="item-in-cart__items-details__details">
                     <h3>{{product.name}}</h3>
                     <div>
-                        <a href="" class="item-in-cart__items-details__details--add add js-item--remove"
-                            data-id="{{product.id}}">&#45;</a>
-                        {{!-- <span class="item-in-cart__items-details__details--quantity quantity cart-item-detail__info--item-count" data-id="{{product.id}}">{{count}}</span> --}}
+                        <button class="item-in-cart__items-details__details--add add js-item--remove"
+                            data-id="{{product.id}}">&#45;</button>
                         <input type="number"
                             class="item-in-cart__items-details__details--quantity quantity cart-item-detail__info--item-count"
                             data-id="{{product.id}}" value={{count}}>
-                        <a href="" class="item-in-cart__items-details__details--add add js-item--add"
-                            data-id="{{product.id}}">+</a> * <span class="total-rs">Rs. {{product.price}}</span>
+                        <button class="item-in-cart__items-details__details--add add js-item--add"
+                            data-id="{{product.id}}">+</button> * <span class="total-rs">Rs. {{product.price}}</span>
                     </div>
                 </div>
                 <span class="cart-item-detail__info--total" data-id="{{product.id}}">Rs.
