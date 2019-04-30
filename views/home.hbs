@@ -1,10 +1,10 @@
 <section class="home-section">
     <div class="container ">
-        <div class="flex flex-center box-shadow p-0" tabindex="0">
+        <div class="home-section__box flex-center box-shadow" tabindex="0">
             <div class="home-section__slider" id="img_slider_1">
                 <div class="home-section__slideshow-container">
                     {{#each banners}}
-                    <div class="home-section__slideshow-container__mySlides mySlides fade">
+                    <div class="home-section__slideshow-container__slides slides fade">
                         <img src="{{this.bannerImageUrl}}" alt="{{this.bannerImageAlt}}" tabindex="0">
                     </div>
                     {{/each}}
@@ -21,7 +21,7 @@
             </div>
         </div>
         {{#each categories}}
-            <div class="flex flex-center box-shadow">
+            <div class="home-section__box flex-center box-shadow">
                 <div class="home-section__category fruits">
                     <img src="{{this.imageUrl}}" alt="{{this.name}} - {{this.description}}" tabindex="0">
                 </div>

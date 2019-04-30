@@ -55,7 +55,7 @@ var sliderFunc = (function() {
   sliderFunc.slider(
     document.getElementById(slider_id).querySelectorAll("#prev_slide"),
     document.getElementById(slider_id).querySelectorAll("#next_slide"),
-    document.getElementById(slider_id).querySelectorAll(".mySlides"),
+    document.getElementById(slider_id).querySelectorAll(".slides"),
     document.getElementById(slider_id).querySelectorAll(".dot")
   );
 })("img_slider_1");

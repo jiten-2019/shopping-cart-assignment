@@ -1,9 +1,22 @@
 /******* Home page css ***********/
 .home-section {
+  &__box{
+   
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-self: center;
+    flex-basis: 100%;
+    div:last-child {
+      align-self: center;
+      justify-content: space-around;
+    }
+  }
   flex-flow: row;
   margin-bottom: 25px;
   &__category img {
-    max-width: 400px;
+    max-width: 350px;
     outline: none;
   }
   &__home-anchor {
