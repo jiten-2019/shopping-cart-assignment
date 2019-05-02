@@ -1,0 +1,51 @@
+
+.col-md-2 {
+	@include col-grid(16.66666667%,16.66666667%,16.66666667%);
+}
+.col-md-3 {
+	@include col-grid(25%,25%,25%);
+
+}
+.col-md-4 {
+	@include col-grid(33.33333333%,33.33333333%,33.33333333%);
+}
+.col-md-5 {
+	@include col-grid(41.66666667%,41.66666667%,41.66666667%);
+}
+.col-md-6 {
+	@include col-grid(50%,50%,50%);
+}
+.col-md-7 {
+	@include col-grid(58.33333333%,58.33333333%,58.33333333%);
+}
+.col-md-8 {
+	@include col-grid(66.66666667%,66.66666667%,66.66666667%);
+}
+.col-md-9 {
+	@include col-grid(75%,75%,75%);
+
+}
+
+
+// Margin-padding
+.mt-15{
+	margin-top:15px;
+}
+.mt-20{
+	margin-top:20px;
+}
+.mt-25{
+	margin-top:25px;
+}
+.mt-30{
+	margin-top:30px;
+}
+.mb-20{
+	margin-bottom:20px;
+}
+.mb-30{
+	margin-bottom:30px;
+}
+.mb-15{
+	margin-bottom:15px;
+}

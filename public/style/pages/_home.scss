@@ -1,0 +1,90 @@
+/******* Home page css ***********/
+.home-section {
+  &__box{
+   
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-self: center;
+    flex-basis: 100%;
+    div:last-child {
+      align-self: center;
+      justify-content: space-around;
+    }
+  }
+  flex-flow: row;
+  margin-bottom: 25px;
+  &__category img {
+    max-width: 350px;
+    outline: none;
+  }
+  &__home-anchor {
+    position: relative;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1.5;
+    margin-top: 20px;
+    padding: 6px 10px;
+    color: #fff;
+    border: none;
+    background: #d00255;
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: all 0.6s ease;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .flex-center {
+    align-self: center;
+    flex-basis: 100%;
+    div:last-child {
+      align-self: center;
+      justify-content: space-around;
+    }
+  }
+  .flex-center div:last-child {
+    @include flex-align(center, flex-start, 1);
+  }
+  .flex-center div:first-child {
+    @include flex-align(center, flex-start, 1);
+  }
+  button {
+    width: auto;
+  }
+  p {
+    font-size: 85%;
+    margin-bottom: 20px;
+  }
+
+  .box-shadow {
+    outline: none;
+    @include bg-color();
+    min-height: 250px;
+    position: relative;
+    padding: 5px 0;
+    margin-top: 15px;
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .box-shadow:after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    left: 50%;
+    top: 21px;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 91%;
+    border-radius: 30%;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  .box-shadow:last-child:after {
+    box-shadow: none;
+  }
+}
+
+/******* End Home page css ***********/

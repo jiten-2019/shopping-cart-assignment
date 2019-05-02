@@ -1,0 +1,80 @@
+.home-section__slider {
+    .home-section__slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+      &__slides {
+        display: none;
+      }
+      img {
+        vertical-align: middle;
+        outline: none;
+        width: 100%;
+      }
+      &__btn--prev,
+      &__btn--next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 0 6px;
+        color: white;
+        font-weight: bold;
+        font-size: 70%;
+        transition: 0.6s ease;
+        user-select: none;
+        @include bg-color(rgba(0, 0, 0, 0.5));
+        margin-top: 0;
+      }
+
+      &__btn--prev {
+        left: 0;
+      }
+      &__btn--next {
+        right: 0;
+      }
+      &__btn--prev:hover,
+      &__btn--next:hover {
+        @include bg-color(rgba(0, 0, 0, 0.8));
+      }
+    }
+    .home-section__dot {
+      cursor: pointer;
+      height: 10px;
+      width: 10px;
+      margin: 0 2px;
+      @include bg-color(#bbb);
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .home-section__dot:hover {
+      @include bg-color(#717171);
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {
+        opacity: 0.4;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0.4;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }

@@ -1,0 +1,9 @@
+{
+    "inputs": [
+        { "label": "Email", "type": "email", "id": "email" },
+        { "label": "Password", "type": "password", "id": "password" }
+    ],
+    "submitLabel": "Login",
+    "heading": "Login",
+    "subHeading": "Get access to your Orders, Wishlist and Recommendations"
+  }

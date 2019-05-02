@@ -1,0 +1,42 @@
+<section class="home-section">
+    <div class="container ">
+        <div class="home-section__box flex-center box-shadow" tabindex="0">
+            <div class="home-section__slider" id="img_slider_1">
+                <div class="home-section__slideshow-container">
+                    {{#each banners}}
+                    <div class="home-section__slideshow-container__slides slides fade">
+                        <img src="{{this.bannerImageUrl}}" alt="{{this.bannerImageAlt}}" tabindex="0">
+                    </div>
+                    {{/each}}
+
+                    <button class="home-section__slideshow-container__btn--prev prev" id="prev_slide">PREV</button>
+                    <buttton class="home-section__slideshow-container__btn--next next" id="next_slide">NEXT</button>
+                </div>
+                <br>
+                <div class="home-section__slider__dots">
+                    {{#each banners}}
+                    <span class="home-section__dot dot" ></span>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{#each categories}}
+            <div class="home-section__box flex-center box-shadow">
+                <div class="home-section__category fruits">
+                    <img src="{{this.imageUrl}}" alt="{{this.name}} - {{this.description}}" tabindex="0">
+                </div>
+                <div class="home-section__prod-desc">
+                    <div>
+                        <h2>{{this.name}}</h2>
+                        <p>{{this.description}}</p>
+                        <a href="/product/{{this.id}}" class="home-section__home-anchor" role="button">Explore
+                            {{this.key}}</a>
+
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</section>
+
+<script type="text/javascript" src="/js/slider.js"></script>

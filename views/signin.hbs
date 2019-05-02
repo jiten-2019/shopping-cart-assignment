@@ -1,0 +1,25 @@
+<section class="login-section">
+    <div class="container">
+        <div class="sign-up flex">
+            <div class="sign-up__page-info mt-20">
+                <h2>{{loginData.heading}}</h2>
+                <p>{{loginData.subHeading}} </p>
+            </div>
+            <div>
+                <form action="/" autocomplete="off" method="post">
+                    {{#each loginData.inputs}}
+                    <fieldset>
+                        <input id="{{this.id}}" type="{{this.type}}" name="{{this.id}}" required aria-required="true">
+                        <label for="{{this.id}}">{{this.label}}</label>
+                        <div class="after"></div>
+                    </fieldset>
+                    {{/each}}
+
+                    <fieldset>
+                        <button aria-label="Submit form to login">{{loginData.submitLabel}}</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

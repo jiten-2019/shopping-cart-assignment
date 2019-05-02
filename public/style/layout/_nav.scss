@@ -1,0 +1,146 @@
+// Header SCSS
+header{
+    width:100%;
+      box-shadow: $box-shadow-bottom-only;
+      .header-right{
+          align-self: flex-end;
+          a{
+              @include anchor(65%,gray,none,600);
+              margin: 5px;
+              font-weight: 600;	
+          }
+          .got-to-cart{
+              width:40px;
+              >img{
+                  width:100%;
+              }
+          }
+          >a {
+              &:hover {
+                  color: $color-hover;
+              }
+          }
+      
+          .cart{
+              background: $color-gray;
+              padding: 6px;
+              text-align: center;
+              position: relative;
+              .item-in-cart{
+                  position: absolute;
+                  top: 4px;
+                  left: 22px;
+                  color: $color-white;
+                  @include font-size();
+                  @include font-weight(700);
+                  background: $color-hover;
+                  padding: 5px;
+                  border-radius: 50%;
+                  width: 25px;
+              }
+                 
+                 
+              #hamburger-icon.open span{
+                
+                      &:nth-child(1) {
+                          top: 10px;
+                          @include transform(135deg, 0s ease-in-out);
+                      }
+                      &:nth-child(2) {
+                          opacity: 0;
+                          left: -60px;
+                      }
+                      &:nth-child(3) {
+                          top: 10px;
+                          @include transform(-135deg, 0.25s ease-in-out);
+                      }
+              
+              }
+  
+          }
+           // Hamburger icon
+           #hamburger-icon{
+            display: none;
+         }
+        
+          #hamburger-icon {
+            width: 25px;
+            height: 13px;
+            position: relative;
+            margin: 0px auto;
+            @include transform();
+            cursor: pointer;
+            span{
+                display: block;
+                position: absolute;
+                height: 3px;
+                width: 100%;
+                background: $color-red;
+                border-radius: 9px;
+                opacity: 1;
+                left: 0;
+                @include transform(0deg,.25s ease-in-out);
+                cursor: pointer;
+                &:nth-child(1) {
+                    top: 0px;
+                }
+                &:nth-child(2) {
+                    top: 7px;
+                }
+                &:nth-child(3) {
+                    top: 14px;
+                }
+            }
+    }
+
+    }
+    nav{
+        flex-grow:1;
+        .row{
+            @include flex();
+            @include padding(6px 0 6px 0);
+           
+        }
+        ul{
+            list-style: none;
+            margin-left: 12%;
+            @include flex-align(flex-end,unset,1);
+            text-align: unset;
+            margin-bottom: 14px;
+                li{
+                    list-style: none;
+                    display: inline-block;
+                    @include margin(6px 15px);
+                }
+               
+        }
+        a{
+            @include anchor(90%, gray, none,600 );
+            transition: all 0.3s ease;
+            &:hover {
+                color: $color-hover;
+            }
+        }
+    }
+    div{
+        width: auto;
+    }
+    >div:last-child {
+        align-self: flex-end;
+    }
+  }
+  .flex{
+      @include flex();
+      justify-content: space-between;
+  }
+  
+  
+.hamburger-icon{
+	display: none;
+}
+.js--main-nav{
+	display: none;
+}
+.xs-show{
+	display: none;
+}

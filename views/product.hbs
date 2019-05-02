@@ -1,0 +1,39 @@
+<section class="plp-section">
+    <div class="container " >
+        <div class="wrapper">
+            <button class="wrapper__mobile-menu--btn xs-show" >Select Value ></button>       
+            <aside class="wrapper__plp-nav wrapper__side-menu">
+                <ul class="">
+                    {{#each categories}}
+                        <li><a href="/product/{{ this.id }}" class="js--sidenav" data="{{ this.id }}"> {{ this.name }}</a></li>
+                    {{/each}}  
+                </ul>
+            </aside>
+            <main class="wrapper__prod-list">
+                <div class="flex-grid">
+
+                    {{#each prodHbs}}
+
+                        <div class="plp">
+                            <h2>{{ this.name }}</h2>
+                            <div class="plp__list">
+                                <img src="{{this.imageURL}}" alt="product image- {{this.description}}" tabindex="0">
+                                <div class="plp__list__prodct">
+                                    <p>{{this.description}}</p>
+                                    <div class="plp__list__product__mrp">
+                                        <span class="xs-hide sm-hide" tabindex="0" aria-hidden="false">MRP Rs. {{this.price}}</span>
+                                        <button class="js-product__buy--btn" id="{{this.id}}">Buy Now<span class="xs-show sm-show" > @ MRP Rs. {{this.price}}</span></button>
+                                    </div> 
+
+                                </div>    
+                            </div>
+                        </div>
+
+                    {{/each}}
+
+                </div>
+            </main>
+        </div>
+    </div>
+</section>
+

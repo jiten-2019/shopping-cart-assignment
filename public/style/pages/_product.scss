@@ -1,0 +1,149 @@
+.wrapper__plp-nav{
+	width: 300px;
+	@include bg-color(#eeeeee);
+		margin-right: 20px;
+		flex: 0 0 23%;
+	ul {
+		margin-top: 6px;
+		li{
+			list-style: none;
+			padding: 9px 25px;
+			border-bottom: 1px solid #e1d5d5;
+			transition: all 0.3s ease;
+			a{
+				cursor: pointer;
+				text-decoration: none;
+   		 color: inherit;
+			}
+			&:active{
+				@include bg-color(#d00256);
+				a{
+					color: $color-white;
+					font-weight: 700;
+				}
+			}
+			&.active{
+				@include bg-color(#d00256);
+				a{
+					color: $color-white;
+					font-weight: 700;
+				}
+			}
+		}                                       
+		
+		li:hover{
+			@include bg-color(#d00256);
+			a{
+				color: $color-white;
+				font-weight: 700;
+			}
+		}
+	}
+}
+
+.product-list{
+	@include flex-wrap(flex,wrap);
+	position: relative;
+	flex: 1;
+	.gallery{
+		justify-content: end;
+		margin-bottom: 15px;
+		flex-basis: 25%;
+	}
+}
+
+.plp-section{
+	.wrapper{
+		&__prod-list{
+			margin-bottom: 20px;
+			margin-top: 20px;
+		}
+		display: flex;
+		min-height: 100%;
+			p{
+				 height: 110px;
+				 overflow: auto;
+			}
+	}
+}
+
+@media screen and (max-width:767px){
+	.plp-section{
+		.wrapper{
+				p{
+					height: auto;
+				}
+		}
+	}
+}
+
+  .flex-grid {
+		@include flex-wrap(flex,wrap);
+		span{
+			font-size: 90%;
+		}
+		img{
+			max-width: 100%;
+			margin-bottom: 5px;
+		}
+		p{
+			font-size: 85%;
+			background: #f5f4f4;
+			padding: 7px 6px;
+		
+		}
+		button{
+			width: auto;
+			margin-top: 0;
+			font-size: 90%;
+		}
+		.plp__list__product__mrp{
+			margin-top: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			button{
+				align-self: flex-end;
+				// width: 100%;
+			}
+		}
+  }
+  
+  .flex-grid > div {
+		@include margin(0 20px 20px 0);
+		padding-bottom: 10px;
+		border-bottom: 2px solid #ddd;
+		background: #fff;
+		border-style: dotted;
+		max-width: 23%;
+	
+  }
+  .flex-grid > div:nth-child(4n+4){
+		margin: 0 0 20px 0;
+  }
+  
+  .flex-grid > div:last-child {
+	margin-right: 0;
+  }
+  
+  .flex-grid h2 {
+		@include margin(0 0 10px 0);
+		@include font-size();
+		@include font-weight(700);
+		line-height: 120%;
+    min-height: 50px;
+  }
+  
+  .flex-grid li {
+		position: relative;
+		@include margin(0 0 10px);
+		@include margin(0 0 0 25px);
+  }
+  
+  .flex-grid li:before {
+		content: '\f00c';
+		font: normal 16px fontawesome;
+		top: 0;
+		left: 0;
+		color: #999;
+  }

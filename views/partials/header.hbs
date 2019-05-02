@@ -1,0 +1,40 @@
+<header>
+    <div class="container flex" id="navbar">
+        <nav role="navigation">
+            <div class="row">
+                <img src="/static/images/logo.png" alt=" logo" class="logo">
+                <ul class="main-nav bottom-xs xs-hide">
+                    <li><a href="/" class="">Home</a></li>
+                    <li><a href="/product" class=""> Products</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="header-right">
+            <a href="/signin" class="xs-hide"> SignIn</a>
+            <a href="/signup" class="xs-hide"> Register</a>
+
+            <div class="cart">
+                <a href="/cart" id="cartBtn" class="got-to-cart"> <img src="/static/images/cart.svg" alt="cart icon">
+                </a>
+                <span class="xs-show item-in-cart" id="js-mobile-count" aria-label="{{cart.count}} Item in cart"
+                    tabindex="0">{{cart.count}}</span>
+                <span class="xs-hide nav__end-cart--count" tabindex="0"
+                    aria-label="{{cart.count}} Item in cart">{{cart.count}} item</span>
+                <div id="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <ul class="main-nav js--main-nav bottom-xs" id="mobile-nav" tabindex="-1">
+                    <li><a href="/" class="">Home</a></li>
+                    <li><a href="/product" class=""> Products</a></li>
+                    <li><a href="/signin" class=""> Signin</a></li>
+                    <li><a href="/signup" class=""> Signup</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

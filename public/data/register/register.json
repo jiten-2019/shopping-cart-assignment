@@ -1,0 +1,12 @@
+{
+    "inputs": [
+      { "label": "First Name", "type": "text", "id": "first" },
+      { "label": "Last Name", "type": "text", "id": "last" },
+      { "label": "Email", "type": "email", "id": "email" },
+      { "label": "Password", "type": "password", "id": "password" },
+      { "label": "confirm password", "type": "password", "id": "con-password" }
+    ],
+    "submitLabel": "Submit",
+    "heading": "Signup",
+    "subHeading": "We do not share your personal details with anyone."
+  }

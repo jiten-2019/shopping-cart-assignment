@@ -1,3 +1,5 @@
+# folder
+dist/
 # Logs
 logs
 *.log
@@ -59,3 +61,6 @@ typings/
 
 # next.js build output
 .next
+
+# css folder
+public/css/
